@@ -11,8 +11,6 @@ import requests
 import shap
 import streamlit as st
 
-st.set_page_config(page_title="Análise de Risco de Obesidade", layout="wide")
-
 st.title('🍟 Análise de Risco de Obesidade')
 st.info('Este aplicativo visa evidenciar as situações de risco analisadas de acordo com o banco de dados!')
 

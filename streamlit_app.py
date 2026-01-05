@@ -11,6 +11,8 @@ import requests
 import shap
 import streamlit as st
 
+st.set_page_config(page_title="Análise de Risco de Obesidade", layout="wide")
+
 st.title('🍟 Análise de Risco de Obesidade')
 st.info('Este aplicativo visa evidenciar as situações de risco analisadas de acordo com o banco de dados!')
 
@@ -97,9 +99,12 @@ def configurar_sidebar():
     with st.sidebar:
         st.header("📌 Sobre o Projeto")
         st.info("""
-            Este aplicativo foi desenvolvido para o **Tech Challenge** da **Fase 4**.
-            🎓 **Curso:** Pós-Graduação em Data Analytics  
-            🏫 **Instituição:** FIAP + Alura
+            Este aplicativo foi desenvolvido para o Tech Challenge da Fase 4, que visa realizar análises preditivas 'XXX' de acordo com a rotina e hábitos alimentares do indíviduo.
+             **Curso:** Pós-Graduação em Data Analytics  
+             **Grupo:** Grupo 113
+             **Integrantes:** Fabiana Cardoso da Silva
+                              Henrique do Couto Santos
+                              Henrique Waideman Peres
             """)
 
 def gerar_explicacao_shap(model, input_df):

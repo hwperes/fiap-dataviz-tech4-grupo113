@@ -365,18 +365,10 @@ def main():
     # 2. Carrega o Modelo
     model = load_model()
 
-    # 3. Corpo Principal
-    st.title("🩺 Análise de Risco de Obesidade")
-    st.markdown("""
-    Preencha o formulário abaixo com os dados do paciente.
-    O sistema utilizará Inteligência Artificial para calcular a probabilidade de risco de obesidade.
-    """)
-    st.markdown("---")
-
-    # 4. Formulário
+    # 3. Formulário
     input_df = get_user_input_features()
 
-    # 5. Botão e Predição
+    # 4. Botão e Predição
     st.markdown("###")
     
     if st.button("🔍 Realizar Predição", type="primary", use_container_width=True):

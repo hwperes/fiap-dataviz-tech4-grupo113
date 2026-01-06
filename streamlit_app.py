@@ -100,14 +100,29 @@ def _get_shap_explainer(_classifier):
 def configurar_sidebar():
     with st.sidebar:
         st.header("📌 Sobre o Projeto")
+        
+        # 1. Descrição do Objetivo (Destaque em azul)
         st.info("""
-            Este aplicativo foi desenvolvido para o Tech Challenge da Fase 4, que visa realizar análises preditivas 'XXX' de acordo com a rotina e hábitos alimentares do indíviduo.
-             **Curso:** Pós-Graduação em Data Analytics  
-             **Grupo:** Grupo 113
-             **Integrantes:** Fabiana Cardoso da Silva
-             Henrique do Couto Santos
-             Henrique Waideman Peres
-            """)
+        Este aplicativo foi desenvolvido para o **Tech Challenge (Fase 4)**. 
+        O objetivo é realizar análises preditivas sobre o risco de obesidade, 
+        baseando-se na rotina e hábitos alimentares dos indivíduos.
+        """)
+        
+        st.divider() # Linha sutil para separar seções
+        
+        # 2. Informações do Curso e Grupo (Uso de Negrito)
+        st.markdown("**🎓 Curso:** Pós-Graduação em Data Analytics")
+        st.markdown("**👥 Grupo:** 113")
+        
+        st.divider()
+        
+        # 3. Integrantes (Lista com marcadores para melhor leitura)
+        st.markdown("**Integrantes:**")
+        st.markdown("""
+        * Fabiana Cardoso da Silva
+        * Henrique do Couto Santos
+        * Henrique Waideman Peres
+        """)
 
 def gerar_explicacao_shap(model, input_df):
     preprocessor = model.named_steps['preprocess']

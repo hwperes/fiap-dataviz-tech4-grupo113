@@ -11,6 +11,8 @@ import requests
 import shap
 import streamlit as st
 
+validar_shap = 'n'
+
 st.set_page_config(page_title="Análise de Risco de Obesidade", layout="wide")
 
 st.title('🍟 Análise de Risco de Obesidade')

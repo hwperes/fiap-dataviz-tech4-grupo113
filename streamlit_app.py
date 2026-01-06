@@ -126,8 +126,8 @@ def gerar_explicacao_shap(model, input_df):
     shap_values = explainer(input_transformed)
     shap_values.feature_names = feature_names_pt
 
-    fig, ax = plt.subplots(figsize=(5, 3))
-    shap.plots.waterfall(shap_values[0, :, 1], show=False, max_display=5)
+    fig, ax = plt.subplots(figsize=(5, 20))
+    shap.plots.waterfall(shap_values[0, :, 1], show=False, max_display=20)
     
     return plt.gcf(), df_mapeamento
 

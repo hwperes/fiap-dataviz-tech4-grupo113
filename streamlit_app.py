@@ -13,7 +13,7 @@ import streamlit as st
 
 validar_shap = 'n'
 
-st.set_page_config(page_title="Análise de Risco de Obesidade", layout="wide")
+st.set_page_config(page_title="Análise de Risco de Obesidade", layout="centered")
 
 st.title('🍟 Análise de Risco de Obesidade')
 st.info('Este aplicativo visa evidenciar as situações de risco analisadas de acordo com o banco de dados!')

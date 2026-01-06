@@ -105,8 +105,8 @@ def configurar_sidebar():
              **Curso:** Pós-Graduação em Data Analytics  
              **Grupo:** Grupo 113
              **Integrantes:** Fabiana Cardoso da Silva
-                              Henrique do Couto Santos
-                              Henrique Waideman Peres
+             Henrique do Couto Santos
+             Henrique Waideman Peres
             """)
 
 def gerar_explicacao_shap(model, input_df):

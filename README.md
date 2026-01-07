@@ -122,3 +122,72 @@ Arquivo principal:
 ├── requirements.txt
 ├── LICENSE
 └── README.md
+
+## 📊 Dados
+
+O dicionário de dados utilizado está disponível na pasta `references/`.  
+As variáveis contemplam aspectos relacionados a:
+
+- Hábitos alimentares  
+- Atividade física  
+- Consumo de água e álcool  
+- Tabagismo  
+- Uso de dispositivos eletrônicos  
+- Dados antropométricos (peso, altura e idade)  
+
+A **variável-alvo** do modelo é **Obesity**, com níveis que variam de:
+
+- Insufficient Weight  
+- Normal Weight  
+- Overweight  
+- Obesity Type I  
+- Obesity Type II  
+- Obesity Type III  
+
+---
+
+## 🧪 Metodologia
+
+### 1️⃣ Pré-processamento
+- Tratamento e limpeza dos dados  
+- Codificação de variáveis categóricas  
+- Normalização e padronização  
+- Feature Engineering  
+
+### 2️⃣ Modelagem
+Foram testados diferentes algoritmos de Machine Learning, incluindo:
+
+- Random Forest (**modelo final escolhido**)  
+- Logistic Regression  
+
+**Métricas avaliadas:**
+- Acurácia  
+- F1-Score  
+- Matriz de Confusão  
+
+### 3️⃣ Deploy
+- Aplicação preditiva desenvolvida em **Streamlit**  
+- Modelo versionado em formato `.joblib`  
+- Ambiente reproduzível utilizando `requirements.txt`  
+
+---
+
+## 📈 Dashboard Analítico
+
+O painel analítico apresenta os principais insights extraídos dos dados, incluindo:
+
+- IMC médio  
+- Média de idade  
+- Risco de obesidade  
+- Nível de obesidade  
+
+A base foi preparada e traduzida para consumo no Power BI, possibilitando análises visuais e apoio à tomada de decisão.
+
+---
+
+## 👨‍💻 Equipe
+
+- **Fabiana Cardoso da Silva**  
+- **Henrique do Couto Santos**  
+- **Henrique Waideman Peres**
+

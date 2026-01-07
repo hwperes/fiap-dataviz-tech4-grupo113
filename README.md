@@ -122,6 +122,9 @@ Arquivo principal:
 ├── requirements.txt
 ├── LICENSE
 └── README.md
+```
+
+---
 
 ## 📊 Dados
 
@@ -142,9 +145,8 @@ A **variável-alvo** do modelo é **Obesity**, com níveis que variam de:
 - Overweight  
 - Obesity Type I  
 - Obesity Type II  
-- Obesity Type III  
+- Obesity Type III
 
-```
 ---
 
 ## 🧪 Metodologia

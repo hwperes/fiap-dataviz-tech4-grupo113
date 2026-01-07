@@ -1,97 +1,124 @@
-# 🩺 Predição de Risco de Obesidade com Machine Learning
+# 🧠 Modelo de Machine Learning para Previsão de Obesidade
 
-Este projeto utiliza **Machine Learning**, **Data Visualization** e **Deploy em Streamlit** para prever o **risco de obesidade** com base em características físicas, hábitos alimentares e estilo de vida do indivíduo.
-
-O trabalho foi desenvolvido como parte do **Tech Challenge – Fase 4 (Data Viz & Production Models)** da **Pós-Graduação em Data Analytics (FIAP + Alura)**.
-
----
-
-## 🎯 Objetivo do Projeto
-
-Criar uma solução **end-to-end**, contemplando:
-
-- 📊 Análise e tratamento de dados  
-- 🤖 Treinamento de modelo preditivo  
-- 🔍 Explicabilidade com SHAP  
-- 🌐 Aplicação interativa com Streamlit  
-- 📈 Base preparada para consumo no Power BI  
-- 🚀 Versionamento e deploy via GitHub  
+![Status](https://img.shields.io/badge/status-concluído-success)
+![Python](https://img.shields.io/badge/python-3.10+-blue)
+![Streamlit](https://img.shields.io/badge/streamlit-app-red)
 
 ---
 
-## 🧠 Modelo de Machine Learning
+## 📋 Sobre o Projeto
 
-- **Algoritmo:** Random Forest Classifier  
-- **Pipeline completo:**  
-  - Pré-processamento (numéricos, binários e categóricos)  
-  - One-Hot Encoding  
-  - Classificação  
-- **Saída do modelo:**  
-  - Predição binária (Risco de Obesidade: Sim/Não)  
-  - Probabilidade associada  
-- **Explicabilidade:**  
-  - SHAP (Waterfall Plot individual)  
+Este repositório reúne todo o desenvolvimento do **Tech Challenge – Fase 4 (Data Visualization & Production Models)** da **Pós-Graduação em Data Analytics (FIAP + Alura)**.
 
-📦 Modelos serializados:
-- `.joblib` → modelo principal  
-- `.pkl` → objetos auxiliares  
+O desafio consiste em desenvolver um **modelo preditivo de obesidade**, utilizando **Machine Learning**, além de:
+
+- Uma **aplicação interativa em Streamlit**
+- Um **painel analítico no Power BI**
+- Uma base de dados tratada, documentada e reproduzível
+
+A solução foi construída seguindo **boas práticas de Engenharia de Machine Learning**, com pipeline completo, versionamento de modelos e foco em **explicabilidade para apoio à decisão clínica**.
 
 ---
 
-## 🖥️ Aplicação Streamlit
+## 🎯 Objetivos do Projeto
 
-A aplicação permite:
-
-- Preenchimento de um **questionário interativo**
-- Cálculo automático de **IMC**
-- Exibição do **resultado da predição**
-- Visualização dos **fatores que mais impactaram a decisão do modelo**
-- Interface amigável, organizada por seções
-
-### Tecnologias Utilizadas
-- `streamlit`
-- `scikit-learn`
-- `pandas`
-- `numpy`
-- `shap`
-- `matplotlib`
+- Realizar análise exploratória da base `Obesity.csv`
+- Executar tratamento, limpeza e tradução dos dados
+- Construir pipeline de pré-processamento e feature engineering
+- Treinar e avaliar modelos preditivos (acurácia ≥ 75%)
+- Selecionar o melhor modelo (Random Forest)
+- Implementar aplicação preditiva em Streamlit
+- Criar base analítica para consumo no Power BI
+- Publicar a solução com documentação e reprodutibilidade
 
 ---
 
-## 📊 Power BI
+## 🏥 Contexto do Problema
 
-Os dados foram:
+A obesidade é uma condição multifatorial relacionada a hábitos alimentares, estilo de vida, fatores genéticos e ambientais.
 
-- Tratados
-- Traduzidos para **Português**
-- Padronizados
-- Exportáveis para consumo no **Power BI**
+Antecipar o **risco de obesidade** auxilia profissionais da saúde em:
+- Ações preventivas
+- Apoio ao diagnóstico
+- Tomada de decisão clínica mais assertiva
 
-Permitindo:
-- Dashboards analíticos
-- Indicadores de saúde
-- Análises exploratórias e executivas
+O modelo utiliza variáveis relacionadas a:
+- Alimentação
+- Atividade física
+- Consumo de água e álcool
+- Tabagismo
+- Uso de dispositivos eletrônicos
+- Dados antropométricos (idade, peso, altura)
 
 ---
 
-## 📂 Estrutura do Repositório
+## 🤖 Modelo de Machine Learning
+
+- **Algoritmo:** Random Forest Classifier
+- **Pipeline completo com:**
+  - Padronização de variáveis numéricas
+  - One-Hot Encoding de variáveis categóricas
+  - Classificação supervisionada
+- **Métricas avaliadas:**
+  - Acurácia
+  - F1-Score
+  - Matriz de Confusão
+- **Explicabilidade:** SHAP (Waterfall Plot individual)
+
+📦 Modelo versionado em:
+- `model_obesity.joblib`
+- `model_obesity.pkl`
+
+---
+
+## 🚀 Aplicação Streamlit
+
+A aplicação preditiva está disponível em:
+
+👉 **https://fiap-dataviz-tech4-grupo113.streamlit.app/**
+
+Funcionalidades:
+- Questionário interativo
+- Cálculo automático de IMC
+- Predição do risco de obesidade
+- Probabilidade associada
+- Visualização dos fatores que mais influenciaram a decisão do modelo (SHAP)
+
+---
+
+## 📊 Dashboard Analítico (Power BI)
+
+Foi construída uma base analítica em português, pronta para consumo no Power BI, contendo:
+
+- IMC
+- Faixa etária
+- Nível de obesidade real e previsto
+- Probabilidade do modelo
+- Indicadores de desempenho
+
+Arquivo principal:
+- `obesidade_analiticoBI_ptbr.csv`
+
+---
+
+## 🗂 Estrutura do Projeto
 
 ```bash
-📁 projeto-risco-obesidade
-│
-├── 📓 notebook/
-│   └── treinamento_modelo.ipynb
-│
-├── 📊 data/
-│   └── obesity_tratado_powerbi.csv
-│
-├── 🤖 model/
-│   ├── modelo_risco_obesidade_random_forest.joblib
-│   └── objetos_auxiliares.pkl
-│
-├── 🌐 app/
-│   └── app_streamlit.py
-│
-├── 📄 requirements.txt
-├── README.md
-└── .gitignore
+├── .streamlit/
+│   └── config.toml
+├── data/
+│   ├── raw/
+│   │   └── Obesity.csv
+│   └── processed/
+│       └── obesidade_analiticoBI_ptbr.csv
+├── models/
+│   ├── model_obesity.joblib
+│   └── model_obesity.pkl
+├── notebooks/
+│   └── tech_challenge_codigo.ipynb
+├── references/
+│   └── dicionario_obesity_fiap.pdf
+├── app.py
+├── requirements.txt
+├── LICENSE
+└── README.md

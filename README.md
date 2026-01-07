@@ -144,6 +144,7 @@ A **variável-alvo** do modelo é **Obesity**, com níveis que variam de:
 - Obesity Type II  
 - Obesity Type III  
 
+```
 ---
 
 ## 🧪 Metodologia

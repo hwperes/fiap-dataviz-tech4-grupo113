@@ -120,7 +120,6 @@ Arquivo principal:
 │   └── dicionario_obesity_fiap.pdf
 ├── app.py
 ├── requirements.txt
-├── LICENSE
 └── README.md
 ```
 

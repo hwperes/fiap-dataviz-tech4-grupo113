@@ -15,7 +15,7 @@ validar_shap = 'n'
 
 st.set_page_config(page_title="Análise de Risco de Obesidade", layout="centered")
 
-st.title('🍟 Análise de Risco de Obesidade')
+st.title('Análise de Risco de Obesidade')
 st.info('Este aplicativo visa evidenciar as situações de risco analisadas de acordo com o banco de dados!')
 
 def ordenar_opcoes(lista):
@@ -99,7 +99,7 @@ def _get_shap_explainer(_classifier):
 
 def configurar_sidebar():
     with st.sidebar:
-        st.header("📌 Sobre o Projeto")
+        st.header("Sobre o Projeto")
         
         # 1. Descrição do Objetivo (Destaque em azul)
         st.info("""
@@ -111,8 +111,8 @@ def configurar_sidebar():
         st.divider() # Linha sutil para separar seções
         
         # 2. Informações do Curso e Grupo (Uso de Negrito)
-        st.markdown("**🎓 Curso:** Pós-Graduação em Data Analytics")
-        st.markdown("**👥 Grupo:** 113")
+        st.markdown("**Curso:** Pós-Graduação em Data Analytics")
+        st.markdown("**Grupo:** 113")
         
         st.divider()
         
@@ -183,7 +183,7 @@ def get_user_input_features():
     else:
         tabela_imc = 'Obesidade grau III'
 
-    st.info(f"ℹ️ **IMC Calculado:** {imc} kg/m² ({tabela_imc})")
+    st.info(f"**IMC Calculado:** {imc} kg/m² ({tabela_imc})")
     st.markdown("---")
 
     # HISTÓRICO E HÁBITOS
@@ -371,7 +371,7 @@ def exibir_importancia_variaveis(model):
     df_imp['nome_exibicao'] = df_imp['feature'].apply(limpar_nome)
 
     # Exibição no Streamlit
-    st.markdown("### 📊 Fatores de Maior Peso")
+    st.markdown("###Fatores de Maior Peso")
     st.markdown("As 3 principais variáveis que o modelo considerou para esta análise global:")
 
     for i, row in df_imp.iterrows():
@@ -393,7 +393,7 @@ def main():
     # 4. Botão e Predição
     st.markdown("###")
     
-    if st.button("🔍 Realizar Predição", type="primary", use_container_width=True):
+    if st.button("Realizar Predição", type="primary", use_container_width=True):
         if model is not None:
             try:
                 prediction = model.predict(input_df)
@@ -403,13 +403,13 @@ def main():
                 st.header("Resultado da Análise")
 
                 if prediction[0] == 1:
-                    st.error("⚠️ **ALTO RISCO DE OBESIDADE IDENTIFICADO**")
+                    st.error("**ALTO RISCO DE OBESIDADE IDENTIFICADO**")
                     st.metric(label="Probabilidade de Risco", value=f"{probability[0][1] * 100:.1f}%")
-                    st.warning("👉 **Recomendação:** Sugere-se encaminhamento para orientação médica e nutricional especializada.")
+                    st.warning("**Recomendação:** Sugere-se encaminhamento para orientação médica e nutricional especializada.")
                 else:
-                    st.success("✅ **BAIXO RISCO IMEDIATO**")
+                    st.success("**BAIXO RISCO IMEDIATO**")
                     st.metric(label="Probabilidade de Risco", value=f"{probability[0][1] * 100:.1f}%")
-                    st.info("👉 **Recomendação:** Continue mantendo hábitos saudáveis e acompanhamento regular.")
+                    st.info("**Recomendação:** Continue mantendo hábitos saudáveis e acompanhamento regular.")
                 
                 # Exibição do SHAP
                 st.markdown("---")
@@ -431,7 +431,7 @@ def main():
                 if validar_shap.lower() == 's':
 
                     st.markdown("---")
-                    st.header("🕵️‍♀️ Debug: Ver Mapeamento Técnico das Variáveis")
+                    st.header("Debug: Ver Mapeamento Técnico das Variáveis")
                     st.write("Verifique abaixo como cada variável técnica foi traduzida para o gráfico. Útil para encontrar duplicidades.")
 
                     with st.expander("Clique aqui para ver"):
@@ -448,7 +448,7 @@ def main():
             except Exception as e:
                 st.error(f"Ocorreu um erro técnico ao realizar a predição: {e}")
         else:
-            st.error("⚠️ O modelo de Inteligência Artificial não foi carregado corretamente. Verifique os arquivos.")
+            st.error("O modelo de Inteligência Artificial não foi carregado corretamente. Verifique os arquivos.")
             
 if __name__ == "__main__":
     main()

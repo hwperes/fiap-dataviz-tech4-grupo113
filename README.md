@@ -1,4 +1,4 @@
-# 🧠 Modelo de Machine Learning para Previsão de Obesidade
+# Modelo de Machine Learning para Previsão de Obesidade
 
 ![Status](https://img.shields.io/badge/status-concluído-success)
 ![Python](https://img.shields.io/badge/python-3.10+-blue)
@@ -6,7 +6,7 @@
 
 ---
 
-## 📋 Sobre o Projeto
+## Sobre o Projeto
 
 Este repositório reúne todo o desenvolvimento do **Tech Challenge – Fase 4 (Data Visualization & Production Models)** da **Pós-Graduação em Data Analytics (FIAP + Alura)**.
 
@@ -20,7 +20,7 @@ A solução foi construída seguindo **boas práticas de Engenharia de Machine L
 
 ---
 
-## 🎯 Objetivos do Projeto
+## Objetivos do Projeto
 
 - Realizar análise exploratória da base `Obesity.csv`
 - Executar tratamento, limpeza e tradução dos dados
@@ -33,7 +33,7 @@ A solução foi construída seguindo **boas práticas de Engenharia de Machine L
 
 ---
 
-## 🏥 Contexto do Problema
+## Contexto do Problema
 
 A obesidade é uma condição multifatorial relacionada a hábitos alimentares, estilo de vida, fatores genéticos e ambientais.
 
@@ -52,7 +52,7 @@ O modelo utiliza variáveis relacionadas a:
 
 ---
 
-## 🤖 Modelo de Machine Learning
+## Modelo de Machine Learning
 
 - **Algoritmo:** Random Forest Classifier
 - **Pipeline completo com:**
@@ -65,17 +65,17 @@ O modelo utiliza variáveis relacionadas a:
   - Matriz de Confusão
 - **Explicabilidade:** SHAP (Waterfall Plot individual)
 
-📦 Modelo versionado em:
+ Modelo versionado em:
 - `model_obesity.joblib`
 - `model_obesity.pkl`
 
 ---
 
-## 🚀 Aplicação Streamlit
+## Aplicação Streamlit
 
 A aplicação preditiva está disponível em:
 
-👉 **https://fiap-dataviz-tech4-grupo113.streamlit.app/**
+ **https://fiap-dataviz-tech4-grupo113.streamlit.app/**
 
 Funcionalidades:
 - Questionário interativo
@@ -86,7 +86,7 @@ Funcionalidades:
 
 ---
 
-## 📊 Dashboard Analítico (Power BI)
+## Dashboard Analítico (Power BI)
 
 Foi construída uma base analítica em português, pronta para consumo no Power BI, contendo:
 
@@ -101,7 +101,7 @@ Arquivo principal:
 
 ---
 
-## 🗂 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```bash
 ├── .streamlit/
@@ -126,7 +126,7 @@ Arquivo principal:
 
 ---
 
-## 📊 Dados
+## Dados
 
 O dicionário de dados utilizado está disponível na pasta `references/`.  
 As variáveis contemplam aspectos relacionados a:
@@ -149,15 +149,15 @@ A **variável-alvo** do modelo é **Obesity**, com níveis que variam de:
 
 ---
 
-## 🧪 Metodologia
+## Metodologia
 
-### 1️⃣ Pré-processamento
+### [1] Pré-processamento
 - Tratamento e limpeza dos dados  
 - Codificação de variáveis categóricas  
 - Normalização e padronização  
 - Feature Engineering  
 
-### 2️⃣ Modelagem
+### [2] Modelagem
 Foram testados diferentes algoritmos de Machine Learning, incluindo:
 
 - Random Forest (**modelo final escolhido**)  
@@ -168,14 +168,14 @@ Foram testados diferentes algoritmos de Machine Learning, incluindo:
 - F1-Score  
 - Matriz de Confusão  
 
-### 3️⃣ Deploy
+### [3] Deploy
 - Aplicação preditiva desenvolvida em **Streamlit**  
 - Modelo versionado em formato `.joblib`  
 - Ambiente reproduzível utilizando `requirements.txt`  
 
 ---
 
-## 📈 Dashboard Analítico
+## Dashboard Analítico
 
 O painel analítico apresenta os principais insights extraídos dos dados, incluindo:
 
@@ -188,7 +188,7 @@ A base foi preparada e traduzida para consumo no Power BI, possibilitando análi
 
 ---
 
-## 👨‍💻 Equipe
+## Equipe
 
 - **Fabiana Cardoso da Silva**  
 - **Henrique do Couto Santos**  

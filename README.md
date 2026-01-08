@@ -118,7 +118,7 @@ Arquivo principal:
 │   └── tech_challenge_codigo_fase4_grupo113.ipynb
 ├── references/
 │   └── dicionario_obesity_fiap.pdf
-├── streamli_app.py
+├── streamlit_app.py
 ├── requirements.txt
 └── README.md
 ```

@@ -112,10 +112,10 @@ Arquivo principal:
 │   └── processed/
 │       └── obesidade_analiticoBI_ptbr.csv
 ├── models/
-│   ├── model_obesity.joblib
+│   ├── risco_obesidade_random_forest.joblib
 │   └── model_obesity.pkl
 ├── notebooks/
-│   └── tech_challenge_codigo.ipynb
+│   └── tech_challenge_codigo_fase4_grupo113.ipynb
 ├── references/
 │   └── dicionario_obesity_fiap.pdf
 ├── app.py

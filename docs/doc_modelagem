@@ -1,0 +1,201 @@
+# Documentação da Modelagem — Tech Challenge Fase 4
+
+Este documento descreve de forma estruturada o processo de preparação dos dados, construção dos modelos de Machine Learning, avaliação de desempenho e decisão do modelo final utilizado no sistema de previsão de risco de obesidade.
+
+---
+
+## 1. Definição do Problema
+
+O objetivo do projeto é desenvolver um modelo preditivo capaz de classificar indivíduos conforme o nível de obesidade, utilizando variáveis relacionadas a hábitos alimentares, estilo de vida, características físicas e comportamentais.
+
+O problema foi tratado como **classificação multiclasse**, considerando os níveis originais da variável-alvo **Obesity**, conforme o dicionário oficial da FIAP:
+
+- Insufficient Weight  
+- Normal Weight  
+- Overweight Level I  
+- Overweight Level II  
+- Obesity Type I  
+- Obesity Type II  
+- Obesity Type III  
+
+Essa abordagem permite análises mais detalhadas e suporte a decisões clínicas mais precisas.
+
+---
+
+## 2. Preparação e Tratamento dos Dados
+
+### 2.1 Limpeza e Padronização
+
+As etapas iniciais envolveram:
+
+- Leitura da base `Obesity.csv`
+- Validação de tipos de dados
+- Padronização de variáveis categóricas
+- Verificação de valores inconsistentes
+- Análise estatística descritiva e exploratória
+
+---
+
+### 2.2 Engenharia de Atributos
+
+Foram criadas variáveis adicionais para enriquecer a análise e os relatórios analíticos:
+
+- **IMC (Índice de Massa Corporal)**  
+  Calculado a partir de peso e altura:
+
+
+- **Faixa Etária**  
+Classificação por intervalos etários para análises demográficas.
+
+- **Nível de Risco**  
+Classificação interpretativa baseada na predição do modelo.
+
+---
+
+### 2.3 Tratamento de Variáveis
+
+- Variáveis numéricas: convertidas para `float` ou `int`
+- Variáveis categóricas: tratadas como `string`
+- Tradução de rótulos para português na base analítica final
+
+---
+
+## 3. Pipeline de Transformação
+
+Para garantir reprodutibilidade e evitar vazamento de dados (*data leakage*), foi utilizado um **Pipeline do Scikit-Learn**.
+
+### Componentes do Pipeline:
+
+- **Variáveis Numéricas**  
+- Padronização com `StandardScaler`
+
+- **Variáveis Categóricas**  
+- Codificação com `OneHotEncoder`
+
+- **Modelo**  
+- Inserido como última etapa do pipeline
+
+Esse pipeline foi utilizado tanto no treinamento quanto no ambiente de produção (Streamlit).
+
+---
+
+## 4. Modelos Avaliados
+
+Dois algoritmos de Machine Learning foram treinados e comparados.
+
+---
+
+### 4.1 Regressão Logística
+
+Modelo linear utilizado como **baseline**, com foco em simplicidade e interpretabilidade.
+
+**Resultados obtidos (base de teste):**
+
+- **Acurácia:** 87,00%
+
+Métricas agregadas:
+
+| Métrica   | Valor |
+|----------|-------|
+| Precisão | 0.87  |
+| Recall   | 0.87  |
+| F1-Score | 0.87  |
+| Amostras | 423   |
+
+A matriz de confusão indicou maior confusão entre classes adjacentes, especialmente entre níveis de sobrepeso e obesidade.
+
+---
+
+### 4.2 Random Forest (Modelo Final)
+
+Modelo baseado em múltiplas árvores de decisão, capaz de capturar relações não lineares e interações complexas entre variáveis.
+
+**Resultados obtidos (base de teste):**
+
+- **Acurácia:** 93,14%
+
+Métricas agregadas:
+
+| Métrica   | Valor |
+|----------|-------|
+| Precisão | 0.94  |
+| Recall   | 0.93  |
+| F1-Score | 0.93  |
+| Amostras | 423   |
+
+A matriz de confusão demonstrou maior concentração de acertos na diagonal principal, indicando melhor capacidade de generalização.
+
+---
+
+## 5. Comparação de Desempenho dos Modelos
+
+### Métricas Globais
+
+| Modelo              | Acurácia |
+|---------------------|----------|
+| Regressão Logística | 87,00%   |
+| Random Forest       | 93,14%   |
+
+---
+
+### Métricas Agregadas (Weighted Average)
+
+| Métrica     | Regressão Logística | Random Forest |
+|------------|---------------------|---------------|
+| Precisão   | 0.87                | 0.94          |
+| Recall     | 0.87                | 0.93          |
+| F1-Score   | 0.87                | 0.93          |
+| Amostras   | 423                 | 423           |
+
+---
+
+### Análise Comparativa
+
+- O **Random Forest** apresentou desempenho superior em todas as métricas avaliadas.
+- O modelo mostrou melhor equilíbrio entre precisão e recall.
+- Houve redução significativa de erros entre classes próximas.
+- A Regressão Logística, apesar de interpretável, apresentou limitações para capturar relações não lineares.
+
+---
+
+## 6. Importância das Variáveis
+
+A análise de importância das features do Random Forest indicou como principais fatores:
+
+- Índice de Massa Corporal (IMC)
+- Histórico familiar de obesidade
+- Idade
+- Frequência de consumo alimentar
+- Nível de atividade física
+
+Essas variáveis estão diretamente alinhadas com a literatura médica sobre obesidade.
+
+---
+
+## 7. Deploy e Produção
+
+O modelo final foi integrado à aplicação Streamlit.
+
+### Principais Arquivos:
+
+- `models/risco_obesidade_random_forest.joblib` — modelo treinado
+- `streamlit_app.py` — aplicação Streamlit
+- `obesidade_analiticoBI_ptbr.csv` — base analítica para BI
+
+### Entrada do Modelo
+
+- DataFrame contendo variáveis numéricas e categóricas brutas
+
+### Saída do Modelo
+
+- Classe predita de obesidade
+- Probabilidade associada à predição
+
+---
+
+## 8. Referências
+
+- Dicionário de Dados FIAP (`dicionario_obesity_fiap.pdf`)
+- Documento Oficial do Tech Challenge — Fase 4
+- Notebook do Projeto (`tech_challenge_codigo_fase4_grupo113.ipynb`)
+

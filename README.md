@@ -99,6 +99,8 @@ Foi construída uma base analítica em português, pronta para consumo no Power 
 Arquivo principal:
 - `obesidade_analiticoBI_ptbr.csv`
 
+[Dashboard - Estudo de Obesidade - Grupo 113](https://app.powerbi.com/view?r=eyJrIjoiMWYxZWRlNmQtM2RkMC00MzQ4LWE3ZGYtNTZlNzkwMzVlMmQ0IiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9)
+
 ---
 
 ## Estrutura do Projeto

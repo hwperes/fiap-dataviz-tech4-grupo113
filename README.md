@@ -115,6 +115,7 @@ Arquivo principal:
 │       └── obesidade_analiticoBI_ptbr.csv
 ├── docs/
 │   ├── doc_modelagem.md
+│   │── Estudo de Obesidade.pbix
 │   └── index.md
 │       
 ├── models/

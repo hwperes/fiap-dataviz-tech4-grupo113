@@ -83,7 +83,7 @@ def load_model():
     try:
         return joblib.load('risco_obesidade_random_forest.joblib')
     except FileNotFoundError:
-        url_modelo = "https://github.com/hwperes/fiap-dataviz-tech4-grupo113/raw/main/Modelos/risco_obesidade_random_forest.joblib"
+        url_modelo = "https://github.com/hwperes/fiap-dataviz-tech4-grupo113/raw/main/models/risco_obesidade_random_forest.joblib"
         try:
             response = requests.get(url_modelo)
             if response.status_code == 200:

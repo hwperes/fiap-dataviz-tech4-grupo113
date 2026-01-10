@@ -113,6 +113,10 @@ Arquivo principal:
 │   │   └── Obesity.csv
 │   └── processed/
 │       └── obesidade_analiticoBI_ptbr.csv
+├── docs/
+│   ├── doc_modelagem.md
+│   └── index.md
+│       
 ├── models/
 │   ├── risco_obesidade_random_forest.joblib
 │   └── model_obesity.pkl
